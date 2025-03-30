@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
 # Manually specify Google Chrome binary location
-CHROME_PATH = "/usr/bin/google-chrome"
+CHROME_PATH = "/opt/render/project/chrome/google-chrome"
 
 def parse(category):
     # Install ChromeDriver automatically
