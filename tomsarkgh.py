@@ -4,8 +4,12 @@ import time
 from selenium.webdriver.chrome.options import Options
 
 def parse(category):
+    chromedriver_autoinstaller.install()
+
     chrome_options = Options()
-    chrome_options.add_argument('--headless')
+    chrome_options.add_argument("--headless")  # Run in headless mode
+    chrome_options.add_argument("--no-sandbox")  # Required for Render
+    chrome_options.add_argument("--disable-dev-shm-usage") 
 
     driver = webdriver.Chrome(options=chrome_options)
 
