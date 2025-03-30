@@ -1,21 +1,29 @@
+import os
 import chromedriver_autoinstaller
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
+# Define the Chrome binary location manually
+CHROME_PATH = "/opt/render/project/chrome/chrome"
+CHROMEDRIVER_PATH = "/opt/render/project/chromedriver"
 
 def parse(category):
-    chromedriver_autoinstaller.install()
+    # Install ChromeDriver automatically
+    chromedriver_autoinstaller.install(path=CHROMEDRIVER_PATH)
 
+    # Configure Chrome options
     chrome_options = Options()
+    chrome_options.binary_location = CHROME_PATH  # Manually specify Chrome path
     chrome_options.add_argument("--headless")  # Run in headless mode
     chrome_options.add_argument("--no-sandbox")  # Required for Render
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    service = Service()  # No need to specify path, chromedriver-autoinstaller handles it
+    chrome_options.add_argument("--disable-dev-shm-usage")  # Prevent crashes
 
-
-    driver = webdriver.Chrome(options=chrome_options)
+    # Initialize ChromeDriver
+    service = Service(os.path.join(CHROMEDRIVER_PATH, "chromedriver"))
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
     try:
         driver.get(url='https://www.tomsarkgh.am/')
@@ -63,5 +71,4 @@ def parse(category):
         return f"Error: {ex.__class__.__name__}"
 
     finally:
-        driver.close()
         driver.quit()
