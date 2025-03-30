@@ -1,7 +1,2 @@
-from telebot import TeleBot
-from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
-import tomsarkgh
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import time
-from selenium.webdriver.chrome.options import Options
+pyTelegramBotAPI
+selenium
