@@ -6,8 +6,8 @@ import time
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
-# Manually specify Google Chrome binary location
-CHROME_PATH = "/opt/render/project/chrome/google-chrome"
+# Manually specify Chrome path for Railway
+CHROME_PATH = "/usr/bin/google-chrome-stable"
 
 def parse(category):
     # Install ChromeDriver automatically
@@ -17,7 +17,7 @@ def parse(category):
     chrome_options = Options()
     chrome_options.binary_location = CHROME_PATH  # Manually specify Chrome path
     chrome_options.add_argument("--headless")  # Run in headless mode
-    chrome_options.add_argument("--no-sandbox")  # Required for Render
+    chrome_options.add_argument("--no-sandbox")  # Required for Railway
     chrome_options.add_argument("--disable-dev-shm-usage")  # Prevent crashes
 
     # Initialize ChromeDriver
