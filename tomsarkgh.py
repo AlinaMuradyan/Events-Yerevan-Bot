@@ -6,7 +6,7 @@ import time
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
-# Use Render's built-in Chrome location
+# Manually specify Google Chrome binary location
 CHROME_PATH = "/usr/bin/google-chrome"
 
 def parse(category):
@@ -21,7 +21,8 @@ def parse(category):
     chrome_options.add_argument("--disable-dev-shm-usage")  # Prevent crashes
 
     # Initialize ChromeDriver
-    driver = webdriver.Chrome(options=chrome_options)
+    service = Service()  # No need to specify a path, chromedriver_autoinstaller handles it
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
     try:
         driver.get(url='https://www.tomsarkgh.am/')
