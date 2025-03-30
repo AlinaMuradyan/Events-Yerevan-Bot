@@ -9,7 +9,9 @@ def parse(category):
     chrome_options = Options()
     chrome_options.add_argument("--headless")  # Run in headless mode
     chrome_options.add_argument("--no-sandbox")  # Required for Render
-    chrome_options.add_argument("--disable-dev-shm-usage") 
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    service = Service()  # No need to specify path, chromedriver-autoinstaller handles it
+
 
     driver = webdriver.Chrome(options=chrome_options)
 
