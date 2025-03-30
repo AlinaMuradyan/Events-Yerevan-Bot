@@ -1,7 +1,9 @@
+import chromedriver_autoinstaller
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.chrome.options import Options
+
 
 def parse(category):
     chromedriver_autoinstaller.install()
