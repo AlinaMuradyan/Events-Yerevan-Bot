@@ -58,7 +58,7 @@ pip install selenium chromedriver-autoinstaller pyTelegramBotAPI
 Create a `.env` file (or you can directly insert it into your code) and add your Telegram bot token, which you get from **@BotFather**. In your code, make sure you reference the token like this:
 
 ```python
-TOKEN = 'your-telegram-bot-token'
+TOKEN = '7705380528:AAHylnA26Vi0wstHTd8eFz1d4bI-eDKyLPg'
 ```
 
 ### 🚀 Step 4: Run the Bot
