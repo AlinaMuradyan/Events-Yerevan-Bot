@@ -7,18 +7,21 @@ Welcome to the **Events-Yerevan-Bot** repository! This is a Telegram bot designe
 
 ## 🛠️ Features
 
-- **Category-based Event Listings**: Users can choose from three categories: **Concerts**, **Theatre**, and **Opera and Ballet**.
-- **Upcoming Events**: The bot fetches and displays events happening in the next 3 days from the selected category.
-- **User-friendly Interface**: Simple button-based interaction, no need for complicated commands.
+- **Category-based Event Listings**: Choose from three categories: **Concerts**, **Theatre**, and **Opera and Ballet**.
+- **Upcoming Events**: The bot fetches and displays a list of events happening within the next 3 days for the selected category.
+- **Real-time Event Scraping**: The bot uses **Selenium** to scrape event data from websites in real-time.
+- **Telegram Bot Interaction**: Users interact with the bot using inline keyboard buttons, making it simple and user-friendly.
+- **Headless Web Scraping**: The bot uses **headless browsing** to scrape event data efficiently without opening a visible browser window.
 
 ---
 
 ## ⚙️ Technologies Used
 
-- **Python**: The core programming language used to build the bot.
-- **Selenium**: A Python library for web scraping that automates the process of browsing and fetching event data from websites.
-- **python-telegram-bot**: A Python library to interact with the Telegram Bot API.
-- **ChromeDriver**: Used with Selenium to interact with the Chrome browser during scraping.
+- **Python 3.x**: The core programming language used for building the bot.
+- **Selenium**: A Python library for automating web browsers and scraping event data from dynamic websites.
+- **Chromedriver-autoinstaller**: Automatically installs the correct version of **ChromeDriver** based on the version of Chrome installed.
+- **Telegram Bot API**: Using the `pyTelegramBotAPI` library to interact with the Telegram Bot API and create the bot.
+- **Headless Chrome**: Used for efficient web scraping without opening a visible browser window.
 
 ---
 
@@ -26,15 +29,16 @@ Welcome to the **Events-Yerevan-Bot** repository! This is a Telegram bot designe
 
 ### 📝 Prerequisites
 
-- Python 3.7 or higher
-- A Telegram bot token (you can create a bot via [@BotFather](https://core.telegram.org/bots#botfather) on Telegram)
-- **Selenium WebDriver**
-- Chrome browser and corresponding **ChromeDriver** version
-- Libraries: `python-telegram-bot`, `selenium`, `requests` (and any other necessary libraries)
+Before running the bot, make sure you have the following installed:
+
+- **Python 3.7 or higher**: The core programming language for the bot.
+- **Telegram Bot Token**: You can get your bot token by chatting with [@BotFather](https://core.telegram.org/bots#botfather) on Telegram.
+- **Google Chrome**: Ensure Google Chrome is installed on your machine.
+- **ChromeDriver**: The `chromedriver-autoinstaller` will handle the installation of the correct version of ChromeDriver.
 
 ### 🔧 Step 1: Clone the Repository
 
-To get started, clone the repository to your local machine:
+First, clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/AlinaMuradyan/Events-Yerevan-Bot.git
@@ -43,34 +47,29 @@ cd Events-Yerevan-Bot
 
 ### 📦 Step 2: Install Dependencies
 
-Install the required Python libraries:
+To install the required Python libraries, run the following command:
 
 ```bash
-pip install python-telegram-bot
-pip install selenium
+pip install selenium chromedriver-autoinstaller pyTelegramBotAPI
 ```
 
-You also need **ChromeDriver** to run Selenium. Make sure to download the appropriate version of **ChromeDriver** that matches your installed version of Chrome from [here](https://sites.google.com/a/chromium.org/chromedriver/downloads), and make sure it's accessible in your system’s PATH.
+### 🔑 Step 3: Set Up Telegram Bot Token
 
-### 🔑 Step 3: Add Your Telegram Bot Token
-
-In the project directory, open the Python file where the bot token is stored (usually `bot.py` or a similar file). Add your Telegram Bot API token:
+Create a `.env` file (or you can directly insert it into your code) and add your Telegram bot token, which you get from **@BotFather**. In your code, make sure you reference the token like this:
 
 ```python
 TOKEN = 'your-telegram-bot-token'
 ```
 
-You can get your Telegram bot token by chatting with [@BotFather](https://core.telegram.org/bots#botfather).
-
 ### 🚀 Step 4: Run the Bot
 
-You can now run the bot locally:
+You can now run the bot by executing the Python script. Make sure the main script is named something like `bot.py` (or adjust according to your file name). To run the bot, use:
 
 ```bash
 python bot.py
 ```
 
-The bot will be available for testing and usage directly from your local machine.
+Once the bot is running, it will be available on Telegram. You can start interacting with it using `/start` and choosing the available categories.
 
 ---
 
